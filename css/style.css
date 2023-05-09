@@ -1,0 +1,95 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    /* --black-font:#212529; */
+    --black-font:#444;
+    --bg-blue:linear-gradient(10deg,#02AAB0,#00CDAC);
+    --bg-green:linear-gradient(10deg,#34e89e,#0f3443) ;
+    /* --bg-green:linear-gradient(10deg,#134E5E,#71B280) ; */
+    --blue-color:#02AAB0;
+    --light-color:#f8f9fa;
+}
+body{
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--light-color);
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+/********START NAV*****/
+.navbar .navbar-toggler:focus{
+    box-shadow: none;
+    border: 2px solid var(--blue-color);
+}
+.navbar a.navbar-brand {
+    font-size: 22px;
+    color: var(--black-font);
+}
+.navbar a.navbar-brand .logo{
+    color: var(--blue-color);
+    font-weight: 600;
+}
+
+ul.navbar-nav a.nav-link{
+    border-radius: 4px;
+    font-size: 17px;
+    transition: all .3s;
+}
+ul.navbar-nav a.nav-link:is(:hover,:focus,.active){
+    color: var(--blue-color);
+}
+div.login-btns button.btn{
+    border: 2px solid var(--blue-color);
+    color: var(--blue-color);
+    font-weight: 700;
+    transition: all .3s;
+}
+div.login-btns button.btn:is(:hover,:focus){
+    color: var(--black-font);
+    background-image: var(--bg-blue) ;
+}
+/*****END NAV*****/
+/*****Start Posts*****/
+
+.card .card-header img{
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--blue-color);
+    box-shadow: 0 0 5px #b1b0b0;
+}
+.card .card-body .post-date{
+    font-size: 14px;
+}
+.card .card-header .first-letter{
+    width: 48px;
+    height: 48px;
+    border: 2px solid var(--blue-color);
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    /* background-color: #e0e0e0; */
+}
+.comments_tags{
+    display: flex;
+    gap: 5px;
+    /* background-color: #00CDAC; */
+}
+
+.comments_tags span svg{
+    color: var(--blue-color);
+}
+.comments_tags .tag{
+    background-color:var(--black-font);
+    color: var(--light-color);
+    padding: 2px 14px;
+    border-radius: 17px;
+}
+/*****END Posts*****/
