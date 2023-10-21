@@ -14,9 +14,11 @@ function toggleLoader(show = true) {
 ////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////
 const logoutBtn = document.querySelector("#logout-btn");
+console.log(logoutBtn);
 const baseURL = "https://tarmeezacademy.com/api/v1";
 const token = localStorage.getItem("token");
 const profileLink = document.querySelector(".nav-link-2");
+console.log(profileLink);
 setupUi();
 
 ////////////////////////////////////////////////////////////////////////
@@ -214,9 +216,9 @@ function loginUserFun(nameVal, passwordVal) {
   };
   toggleLoader(true);
   axios
-    .post(`${baseURL}/login`, params)
+    .post(`${baseURL}/login`,params)
     .then(({ data }) => {
-      console.log(data);
+      console.log(data,'fff');
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));
       ///Close The Modal
@@ -270,6 +272,7 @@ function showAlert(msg, id, type = "success") {
 //////////////////////////////////////////////////////////////////////
 /////////////setupUi/////////////////
 function setupUi() {
+  console.log("run");
   const loginNav = document.querySelector(".nav-loged-in");
   const registerNav = document.querySelector(".register-btn");
   const userInfo = document.querySelector("#user-info");
@@ -400,12 +403,14 @@ function showUserInfo() {
 }
 
 logoutBtn.addEventListener("click", function (e) {
+  console.log("run");
   // const alertEle = document.querySelector("#logout-alert")
   localStorage.removeItem("token");
   localStorage.removeItem("user");
   setupUi();
 
-  window.location.href = "home.html";
+  // window.location.href = "index.html";
+  // window.location.href ="index.html";
   showAlert("Logout,Successfuly", "logout-alert");
 });
 

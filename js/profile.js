@@ -1,6 +1,5 @@
 
 ////////////////////////////
-
 function getCurrentUserId(){
     const urlParmas = new URLSearchParams(window.location.search)
     const userId = urlParmas.get("userId");
