@@ -2,7 +2,6 @@
 ///////Get All Posts//////////
 const postsNumber = document.querySelector(".posts-num");
 const allPosts = localStorage.getItem("posts");
-console.log(allPosts);
 postsNumber.innerHTML = allPosts;
 
 //////////////////////pagenation/////////////////////////////////
@@ -19,6 +18,7 @@ function handelScroll() {
 }
 window.addEventListener("scroll", handelScroll);
 
+///////////////////////////////
 ///////Get All Users//////////
 const usersNumber = document.querySelector(".users-num");
 const usersEle = document.querySelector(".users");
@@ -26,23 +26,35 @@ function getUsers(page = 1, reload = true) {
       ///Execute Loader
         toggleLoader(true);
     axios
-    .get(`${baseURL}/users?limit=20&page=${page}`)
-    .then((response) => {
-      ///Stop  Loader
+      .get(`${baseURL}/users?limit=20&page=${page}`)
+      .then((response) => {
+        console.log(response);
+        ///Stop  Loader
         toggleLoader(false);
         let data = response.data;
         let totalUsers = data.meta.total;
         let users = data.data;
         usersNumber.innerHTML = totalUsers;
         console.log(data, "users");
+        /////////////////
+        console.log(filterUsers(users, "Asmaa"));
+        ///////////
         lastPage = data.meta.last_page;
 
         if (reload) {
-            usersEle.innerHTML = "";
+          usersEle.innerHTML = "";
         }
         users.forEach((user) => {
-        const {name,username,email,id,profile_image,posts_count,comments_count} = user
-        let userEle = `
+          const {
+            name,
+            username,
+            email,
+            id,
+            profile_image,
+            posts_count,
+            comments_count,
+          } = user;
+          let userEle = `
             <div class="card user">
                 <div class="card-user-info d-flex align-items-center">
                     <img src=${profile_image} class="rounded-circle user-img">
@@ -65,12 +77,12 @@ function getUsers(page = 1, reload = true) {
                 </div>
             </div>
         `;
-        usersEle.innerHTML += userEle;
+          usersEle.innerHTML += userEle;
+        });
+      })
+      .catch((e) => {
+        console.log(e);
       });
-    })
-    .catch((e) => {
-      console.log(e);
-    });
 }
 getUsers(currentPage);
 

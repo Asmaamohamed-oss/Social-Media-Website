@@ -249,8 +249,11 @@ img.user-img{
 }
 .add-btn{
     position: fixed;
+    font-size: 22px;
+    width: 35px;
     bottom: 25px;
-    right: 0;
+    right: 1px;
+    padding: 0;
     background-color: var(--blue-color);
     color:#f8f9fa;
     align-items: center;
@@ -262,7 +265,13 @@ img.user-img{
 .add-btn:hover{
     border: 2px solid var(--blue-color);
 }
-
+@media (min-width:500px) {
+    .add-btn{
+        font-size: 35px;
+        width: 50px;
+        right: 15px;
+    }
+}
 
 /* comments */
 .comments-section{

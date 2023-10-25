@@ -14,11 +14,9 @@ function toggleLoader(show = true) {
 ////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////
 const logoutBtn = document.querySelector("#logout-btn");
-console.log(logoutBtn);
 const baseURL = "https://tarmeezacademy.com/api/v1";
 const token = localStorage.getItem("token");
 const profileLink = document.querySelector(".nav-link-2");
-console.log(profileLink);
 setupUi();
 
 ////////////////////////////////////////////////////////////////////////
@@ -272,7 +270,6 @@ function showAlert(msg, id, type = "success") {
 //////////////////////////////////////////////////////////////////////
 /////////////setupUi/////////////////
 function setupUi() {
-  console.log("run");
   const loginNav = document.querySelector(".nav-loged-in");
   const registerNav = document.querySelector(".register-btn");
   const userInfo = document.querySelector("#user-info");
@@ -347,7 +344,6 @@ function showUserInfo() {
   const token = localStorage.getItem("token");
   if (token != null) {
     const user = JSON.parse(localStorage.getItem("user"));
-    console.log(user);
     const navUserInfo = document.querySelector("#user-info");
     const userInfoCard = document.querySelector("#user-info-modal");
     const userNameAndImage = `
