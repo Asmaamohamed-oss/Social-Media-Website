@@ -37,7 +37,6 @@ function getUsers(page = 1, reload = true) {
         usersNumber.innerHTML = totalUsers;
         console.log(data, "users");
         /////////////////
-        console.log(filterUsers(users, "Asmaa"));
         ///////////
         lastPage = data.meta.last_page;
 
