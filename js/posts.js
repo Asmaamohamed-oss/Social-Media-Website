@@ -27,11 +27,9 @@ function getPosts(page = 1, reload = true) {
       ///Stop  Loader
       toggleLoader(false);
       let data = response.data;
-      console.log(data,"posts");
       localStorage.setItem("posts",data.meta.total)
       let posts = data.data;
       lastPage = data.meta.last_page;
-
       if (reload) {
         postsEle.innerHTML = "";
       }
@@ -130,12 +128,6 @@ if (postsEle !== null) {
 }
 
 //////////////////////////////////////////////////////////////
-//////////////Add new Post
-
-
-///////////////////////////////////////////////////////////////////////////////
-///////////get post ID and navigate me to post page///////////////////
-
 //////////////////get post ID and navigate me to user profile page////////////////////
 function userClicked(id){
   console.log(id);
@@ -143,6 +135,7 @@ function userClicked(id){
 }
 
 /////////////////////////////////////////////////////////////////////////////////
+//////////////Add new Post//////////////////////////////////////////
 const addNewPostBtn = document.querySelector("#add-post");
 addNewPostBtn.addEventListener("click", addPostBtnClicked);
 

@@ -1,6 +1,7 @@
 
 /// Get Id from Params
 const urlParams = new URLSearchParams(window.location.search)
+console.log(urlParams);
 const postId = urlParams.get('postId')
 let singlePostEle = document.querySelector("#post-page");
 function getPost(){
